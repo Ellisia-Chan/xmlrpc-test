@@ -1,6 +1,6 @@
 from xmlrpc.server import SimpleXMLRPCServer
 
-server_ip = '14.0.4.201'
+server_ip = '127.0.0.1'
 port = 6969
 
 # This function runs the server.
@@ -18,11 +18,15 @@ def run_server():
 class Celcius_Fahrenheit_Converter:
     # This method takes a Celcius temperature and returns the equivalent Fahrenheit temperature.
     def Celcius_to_Fahrenheit(self, celsius):
-        return (float(celsius) * 1.8) + 32
+        answer = (float(celsius) * 1.8) + 32
+        print(f"{celsius} °C = {answer} °F") 
+        return answer
     
     # This method takes a Fahrenheit temperature and returns the equivalent Celcius temperature.
     def Fahrenheit_to_Celcius(self, fahrenheit):
-        return (float(fahrenheit) - 32) / 1.8
+        answer = (float(fahrenheit) - 32) / 1.8
+        print(f"{fahrenheit} °F = {answer} °C") 
+        return answer
     
 if __name__ == "__main__":
     # Run the server.
